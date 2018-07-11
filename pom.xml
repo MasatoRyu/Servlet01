@@ -44,14 +44,43 @@
               <failOnMissingWebXml>false</failOnMissingWebXml>
               <webResources>
                 <resource>
-                  <directory>web\WEB-INF</directory>
+                  <directory>web/WEB-INF</directory>
                 </resource>
               </webResources>
             </configuration>
           </execution>
         </executions>
+              <configuration>
+                    <webXml>${webxml.path}</webXml>
+               </configuration>
       </plugin>
     </plugins>
 </build>
+
+<profiles>
+     <profile>
+          <id>development</id>
+          <activation>
+               <activeByDefault>true</activeByDefault>
+          </activation>
+          <properties>
+               <webxml.path>web/WEB-INF/web.xml</webxml.path>
+          </properties>
+     </profile>
+     <profile>
+          <id>pc</id>
+          <properties>
+               <!-- <resources.directory>${basedir}/src/pc/resources/</resources.directory> -->
+               <webxml.path>src/main/webapp/WEB-INF/web.xml</webxml.path>
+          </properties>
+     </profile>
+     <profile>
+          <id>mobile</id>
+          <properties>
+               <!-- <resources.directory>${basedir}/src/mobile/resources/</resources.directory> -->
+               <webxml.path>${basedir}/src/mobile/WEB-INF/web.xml</webxml.path>
+          </properties>
+     </profile>
+</profiles>
 <!-- š‚±‚±‚Ü‚Å -->
 </project>
