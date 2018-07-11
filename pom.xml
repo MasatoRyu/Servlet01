@@ -5,6 +5,7 @@
 <modelVersion>4.0.0</modelVersion>
 <groupId>maven.DeployWar01</groupId>
 <artifactId>DeployWar01</artifactId>
+<packaging>war</packaging>
 <version>0.0.1-SNAPSHOT</version>
 
 <!-- š‚±‚±‚©‚ç -->
@@ -28,6 +29,28 @@
                 <target>${java.version}</target>
             </configuration>
         </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>make-war</id>
+            <phase>package</phase>
+            <goals>
+              <goal>war</goal>
+            </goals>
+            <configuration>
+              <failOnMissingWebXml>false</failOnMissingWebXml>
+              <webResources>
+                <resource>
+                  <directory>src/main/webapp</directory>
+                </resource>
+              </webResources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
 </build>
 <!-- š‚±‚±‚Ü‚Å -->
