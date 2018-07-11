@@ -3,10 +3,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
     http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <modelVersion>4.0.0</modelVersion>
-<groupId>maven.DeployWar01</groupId>
-<artifactId>DeployWar01</artifactId>
-<packaging>war</packaging>
-<version>0.0.1-SNAPSHOT</version>
+ <groupId>com.github.mamorum</groupId>
+  <artifactId>kaze-sample-war</artifactId>
+  <version>0.2.3</version>
+  <packaging>war</packaging>
+  
 
 <!-- ★ここから -->
 <!-- 文字コードとJavaのバージョンの設定 -->
@@ -40,7 +41,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.6</version>
+        <version>3.1.0</version>
         <executions>
           <execution>
             <id>make-war</id>
@@ -48,47 +49,9 @@
             <goals>
               <goal>war</goal>
             </goals>
-            <configuration>
-              <failOnMissingWebXml>false</failOnMissingWebXml>
-              <webResources>
-                <resource>
-                  <directory>web/WEB-INF</directory>
-                </resource>
-              </webResources>
-            </configuration>
           </execution>
         </executions>
-              <configuration>
-                    <webXml>${webxml.path}</webXml>
-               </configuration>
       </plugin>
     </plugins>
 </build>
-
-<profiles>
-     <profile>
-          <id>development</id>
-          <activation>
-               <activeByDefault>true</activeByDefault>
-          </activation>
-          <properties>
-               <webxml.path>web/WEB-INF/web.xml</webxml.path>
-          </properties>
-     </profile>
-     <profile>
-          <id>pc</id>
-          <properties>
-               <!-- <resources.directory>${basedir}/src/pc/resources/</resources.directory> -->
-               <webxml.path>web/WEB-INF/web.xml</webxml.path>
-          </properties>
-     </profile>
-     <profile>
-          <id>mobile</id>
-          <properties>
-               <!-- <resources.directory>${basedir}/src/mobile/resources/</resources.directory> -->
-               <webxml.path>web/WEB-INF/web.xml</webxml.path>
-          </properties>
-     </profile>
-</profiles>
-<!-- ★ここまで -->
 </project>
