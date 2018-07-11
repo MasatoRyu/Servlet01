@@ -42,6 +42,11 @@
             </goals>
             <configuration>
               <failOnMissingWebXml>false</failOnMissingWebXml>
+              <webResources>
+                <resource>
+                  <directory>web/WEB-INF</directory>
+                </resource>
+              </webResources>
             </configuration>
           </execution>
         </executions>
