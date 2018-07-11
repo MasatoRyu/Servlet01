@@ -49,8 +49,19 @@
             <goals>
               <goal>war</goal>
             </goals>
+            <configuration>
+              <failOnMissingWebXml>false</failOnMissingWebXml>
+              <webResources>
+                <resource>
+                  <directory>web/WEB-INF</directory>
+                </resource>
+              </webResources>
+            </configuration>
           </execution>
         </executions>
+              <configuration>
+                    <webXml>web/WEB-INF/web.xml</webXml>
+               </configuration>
       </plugin>
     </plugins>
 </build>
