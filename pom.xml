@@ -44,7 +44,7 @@
               <failOnMissingWebXml>false</failOnMissingWebXml>
               <webResources>
                 <resource>
-                  <directory>web/WEB-INF</directory>
+                  <directory>web\WEB-INF</directory>
                 </resource>
               </webResources>
             </configuration>
