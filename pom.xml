@@ -56,6 +56,14 @@
                   <directory>web/WEB-INF</directory>
                 </resource>
               </webResources>
+    <archive>
+      <manifest>
+        <mainClass>com.example</mainClass>
+        <addClasspath>true</addClasspath>
+        <addExtensions>true</addExtensions>
+        <classpathPrefix>lib/</classpathPrefix>
+      </manifest>
+    </archive>
             </configuration>
           </execution>
         </executions>
