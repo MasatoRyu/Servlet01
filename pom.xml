@@ -16,6 +16,14 @@
     <java.version>1.8</java.version>
 </properties>
 
+<dependencies>
+    <dependency><!-- サーブレット用 -->
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+    </dependency>
+  </dependencies>
+
 <!-- プラグインの設定 -->
 <build>
     <plugins>
@@ -71,14 +79,14 @@
           <id>pc</id>
           <properties>
                <!-- <resources.directory>${basedir}/src/pc/resources/</resources.directory> -->
-               <webxml.path>src/main/webapp/WEB-INF/web.xml</webxml.path>
+               <webxml.path>web/WEB-INF/web.xml</webxml.path>
           </properties>
      </profile>
      <profile>
           <id>mobile</id>
           <properties>
                <!-- <resources.directory>${basedir}/src/mobile/resources/</resources.directory> -->
-               <webxml.path>${basedir}/src/mobile/WEB-INF/web.xml</webxml.path>
+               <webxml.path>web/WEB-INF/web.xml</webxml.path>
           </properties>
      </profile>
 </profiles>
